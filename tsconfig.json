@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es6", // ターゲットのECMAScriptバージョンを設定します
+    "module": "commonjs", // モジュールの出力形式を設定します
+    "outDir": "dist", // コンパイルされたJavaScriptファイルの出力先ディレクトリを設定します
+    "strict": true, // 厳密な型チェックを有効にします
+    "esModuleInterop": true, // ESモジュールとの相互運用性をサポートします
+    "resolveJsonModule": true // JSONモジュールのインポートを許可します
+  },
+  "include": [
+    "src/**/*.ts" // コンパイル対象のTypeScriptファイルのパスを指定します
+  ],
+  "exclude": [
+    "node_modules" // コンパイルから除外するディレクトリを指定します
+  ]
+}

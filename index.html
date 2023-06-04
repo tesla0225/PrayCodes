@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample Form</title>
+    <link href="{{styleUri}}" rel="stylesheet" />
+    <style>
+      .accordion input[type='checkbox']:checked ~ .accordion-content {
+        max-height: 100%;
+        opacity: 1;
+        visibility: visible;
+      }
+      .accordion .accordion-content {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out,
+          visibility 0.3s ease-in-out;
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-800 text-gray-800 p-8">
+    <div id="root"></div>
+     <script>
+    // acquireVsCodeApi の結果をグローバル変数に格納
+    window.vscodeAPI = acquireVsCodeApi();
+    </script>
+    <script src="{{scriptUri}}" defer></script>
+  </body>
+</html>

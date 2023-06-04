@@ -1,0 +1,11 @@
+html,
+body {
+  background-color: aqua;
+}
+* {
+  color: blue;
+}
+
+h1 {
+  color: red;
+}

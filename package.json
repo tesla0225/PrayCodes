@@ -1,0 +1,104 @@
+{
+  "name": "PrayCode",
+  "displayName": "PrayCode",
+  "description": "Define it, Pray, and Voila! Components is Generated.",
+  "version": "0.0.5",
+  "publisher": "tesla0225",
+  "icon": "media/icon.png",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tesla0225/Praycode.git"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "PrayCode Settings",
+      "properties": {
+        "extension.openai.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API key for OpenAI"
+        },
+        "extension.openai.model": {
+          "type": "string",
+          "default": "gpt-3.5-turbo",
+          "description": "Model name for OpenAI"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "extension.openWebview",
+        "title": "Open Praycode"
+      }
+    ],
+    "views": {
+      "explorer": [
+        {
+          "type": "webview",
+          "id": "praycode.webview",
+          "name": "PrayCode"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "tsc": "tsc --watch -p ./",
+    "watch": "npm run tsc",
+    "webpack": "npx webpack --watch --stats-error-details",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "prettier": "npx prettier --write ."
+  },
+  "devDependencies": {
+    "@babel/core": "7.21.8",
+    "@babel/preset-env": "7.21.5",
+    "@babel/preset-react": "7.18.6",
+    "@types/fs-extra": "11.0.1",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/react": "18.2.6",
+    "@types/react-dom": "18.2.4",
+    "@types/vscode": "^1.78.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "@vscode/test-electron": "^2.3.0",
+    "babel-loader": "9.1.2",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "8.8.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "prettier": "2.8.8",
+    "webpack": "5.82.0",
+    "webpack-cli": "5.1.1",
+    "webpack-dev-server": "4.15.0"
+  },
+  "dependencies": {
+    "@babel/cli": "7.21.5",
+    "@babel/preset-typescript": "7.21.5",
+    "@vscode/webview-ui-toolkit": "1.2.2",
+    "ajv": "8.12.0",
+    "concurrently": "8.0.1",
+    "eslint-plugin-react": "7.32.2",
+    "fs-extra": "11.1.1",
+    "openai": "3.2.1",
+    "path": "0.12.7",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "7.43.9",
+    "react-query": "3.39.3",
+    "ts-loader": "9.4.2",
+    "typescript": "5.0.4"
+  }
+}
